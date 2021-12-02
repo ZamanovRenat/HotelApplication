@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc;
 using HotelApplication.Models;
 using HotelApplication.Services.Interfaces;
 using HotelApplication.ViewModels;
@@ -9,10 +10,8 @@ namespace HotelApplication.Controllers
     {
         private readonly IRoomsData _roomsData;
 
-        public RoomsController(IRoomsData roomsData)
-        {
-            _roomsData = roomsData;
-        }
+        public RoomsController(IRoomsData roomsData) => _roomsData = roomsData;
+
         public IActionResult Index() => View(_roomsData.GetAll());
 
         public IActionResult Details(int id)

@@ -7,6 +7,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using HotelApplication.Services;
+using HotelApplication.Services.Interfaces;
 using Microsoft.Extensions.Configuration;
 
 namespace HotelApplication
@@ -21,6 +23,8 @@ namespace HotelApplication
         }
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton<IRoomsData, InMemoryRoomsData>();
+            
             services.AddControllersWithViews();
         }
 
