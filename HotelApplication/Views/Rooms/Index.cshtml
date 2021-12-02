@@ -4,7 +4,40 @@
     <h3>Список комнат</h3>
     
     <p>
+        <a asp-action="Edit" class="btn">Создать</a>
+    </p>
+    <hr/>
+    
+    <table>
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Вместимость</th>
+            <th>Комфортность</th>
+            <th>Стоимость за 1 ночь</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var room in Model)
+        {
+            <tr>
+                <td>@room.Id</td>
+                <td>@room.Capacity</td>
+                <td>@room.Comfort</td>
+                <td>@room.Price</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@room.Id">Инфо</a>
+                    <a asp-action="Edit" asp-route-id="@room.Id">Редактирование</a>
+                    <a asp-action="Delete" asp-route-id="@room.Id">Удаление</a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+
+    <p>
         <a asp-controller="Hotel" asp-action="Index">На главную</a>
     </p>
+    
 
 </div>
