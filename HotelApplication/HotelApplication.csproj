@@ -18,4 +18,8 @@
     <Folder Include="wwwroot\lib\jquery-validation\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\HotelApplication.Domain\HotelApplication.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
