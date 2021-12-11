@@ -8,5 +8,7 @@ namespace HotelApplication.DAL.Context
         public DbSet<Checkin> Checkins { get; set; }
         public DbSet<Client> Clients { get; set; }
         public DbSet<Room> Rooms { get; set; }
+
+        public HotelApplicationDB(DbContextOptions<HotelApplicationDB> options) : base(options) { }
     }
 }
